@@ -1,13 +1,16 @@
 // 投稿フォーム
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
+
 // import PostText from './PostText';
+//import { makeStyles } from '@material-ui/core/styles';
+
 // import DateTime from './DateTimePicker';
 // import SendBtn from './SendBtn';
 // import RemindTemplate from './RemindTemplate'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -78,8 +81,9 @@ export default function PostForm() {
                             </Button>
                         </div>
                     </Grid>
-                </Grid>
-            </form>
-        </div>
-    )
+                </form>
+            </div>
+        )
+    }
 }
+export default PostForm
