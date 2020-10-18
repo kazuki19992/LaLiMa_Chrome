@@ -11,16 +11,17 @@ import Comment from './Comment'
     constructor(props) {
         super(props);
         this.state = {
-          mode : '0',
-          mes : 'なんで、チャット返してくれないの？？'
-          time:'10:00'
+            logs:[]
         };
       }
     render(){
         //const classes = useStyles();
+        const messages=this.state.logs.map(e=>(
+            <Comment mode={e.mode} text={e.mes} time={e.time}/>
+        ))
         return (
         <div  style={{marginBottom: "110px",width: "95%", margin: "auto"}}>
-            <Comment mode={this.state.mode} text={this.state.mes}/>
+
         </div>
     )
     } 
