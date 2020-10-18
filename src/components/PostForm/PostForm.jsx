@@ -1,7 +1,7 @@
 // 投稿フォーム
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
+//import { makeStyles } from '@material-ui/core/styles';
 import PostText from './PostText';
 // import DateTime from './DateTimePicker';
 import SendBtn from './SendBtn';
@@ -22,7 +22,6 @@ class PostForm extends React.Component{
             <div style={{position:"fixed",
             bottom: "10px",
             left: 0,
-            height: "100px",
             zIndex: 1000,
             height: "100px"}}>
                 <form id="PostForm">
