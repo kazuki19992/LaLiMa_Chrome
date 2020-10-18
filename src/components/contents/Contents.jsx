@@ -26,7 +26,7 @@ import dayjs from 'dayjs'
             // mes : 'なんで、チャット返してくれないの？？',
             // time: dayjs().format('HH:mm')
         };
-         localStorage.setItem('savedContents', JSON.stringify([{mode:'0',mes:'なんで、チャット返してくれないの？？',time:'10:10'}]));
+         localStorage.setItem('savedContents', JSON.stringify([{mode:'0',mes:'なんで、チャット返してくれないの？？',time:'10:10'},{mode : '0', mes : 'ねえ、チャット返してくれないの？？', time:'10:11'}]));
       }
     render(){
         //const classes = useStyles();

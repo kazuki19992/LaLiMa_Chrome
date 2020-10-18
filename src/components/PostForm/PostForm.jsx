@@ -10,8 +10,31 @@ import { makeStyles } from '@material-ui/core/styles';
 // import RemindTemplate from './RemindTemplate'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+let message;
+function updateItem(e){
+    let nowTime=dayjs().format('HH:mm');
+//     this.setState({mode:'1',mes:e.target.value,time:nowTime});
+    message=e.target.value;
+    console.log(nowTime);
+    console.log(message);
+    }
+function submitItem(e){
+    console.log("test",message);
+    let existList = JSON.parse(localStorage.getItem('savedContents'));
+    if(existList == null) existList = [];
+    var entryText = message;
+    var entry = {
+        "mode": '1',
+        "mes": entryText,
+        "time": dayjs().format('HH:mm')
+    };
+    localStorage.setItem("entry", JSON.stringify(entry));
+    // Save allEntries back to local storage
+    existList.push(entry);
+    localStorage.setItem('savedContents', JSON.stringify(existList));
+    console.log(JSON.parse(localStorage.getItem('savedContents')));
 
-
+}
 const useStyles = makeStyles((theme) => ({
     root: {
         position: "fixed",
@@ -52,6 +75,7 @@ export default function PostForm() {
                             rows={4}
                             placeholder="リマインドをお願いする時は「展開」ボタンでテンプレートが展開されるよ！"
                             variant="outlined"
+                            onChange={updateItem}
                             />
                         </div>
                     </Grid>
@@ -61,7 +85,7 @@ export default function PostForm() {
                             <Button
                             variant="contained"
                             >
-                                展開
+                                削除
                             </Button>
                         </div>
                         {/* <br /> */}
@@ -70,6 +94,7 @@ export default function PostForm() {
                             <Button
                             variant="contained"
                             color="primary"
+                            onClick={submitItem}
                             >
                                 送信
                             </Button>
