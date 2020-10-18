@@ -33,7 +33,7 @@ const msgList = [
 setInterval(() => {
     now = dayjs().format('HH:mm');
     console.log("count = ",now)
-    replyEntry(msgList[Math.floor( Math.random()* msgList.length );]);
+    replyEntry(msgList[Math.floor( Math.random()* msgList.length )]);
     console.log(JSON.parse(localStorage.getItem('savedContents')));
 }, 10000);
 // setInterval(() => {
@@ -52,10 +52,6 @@ function replyEntry(text){
     };
     localStorage.setItem("entry", JSON.stringify(entry));
     // Save allEntries back to local storage
-    let seed=Math.random() * 1000;
-    if(seed==1000){
-        existList.push(entry);
-        localStorage.setItem('savedContents', JSON.stringify(existList));
-    }
-
+    existList.push(entry);
+    localStorage.setItem('savedContents', JSON.stringify(existList));
 }
