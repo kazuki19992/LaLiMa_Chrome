@@ -47,6 +47,7 @@ function deleteItem(e){
 const useStyles = makeStyles((theme) => ({
     root: {
         position: "fixed",
+        backgroundColor: "#ffffff",
         bottom: "10px",
         left: 0,
         height: "100px",

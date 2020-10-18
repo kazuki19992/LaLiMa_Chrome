@@ -6,10 +6,34 @@ let count = 0;
 let now = dayjs().format('HH:mm');
 console.log("now=",now);
 
+const msgList = [
+    "ねーねー。",
+    "きいてるー？？",
+    "はなそーよー",
+    "大好きだよ",
+    "愛してるよー！",
+    "すき……",
+    "ちゅっちゅ！！",
+    "他の女と一緒にいないよね…？",
+    "あなたを誰にも渡さない……",
+    "ねー……",
+    "むぅ",
+    "いっぱいお話したいだけなのに……",
+    "ねぇってばー",
+    "すきだよ？",
+    "こんなに好きなのに……",
+    "私が悪いのかな……?",
+    "はぁ。。。",
+    "ふーん…",
+    "こんなにすきなのに……",
+    "あいたい。",
+    "ねぇ、会いたいよー……"
+]
+
 setInterval(() => {
     now = dayjs().format('HH:mm');
     console.log("count = ",now)
-    replyEntry("entry");
+    replyEntry(msgList[Math.floor( Math.random()* msgList.length );]);
     console.log(JSON.parse(localStorage.getItem('savedContents')));
 }, 10000);
 // setInterval(() => {
