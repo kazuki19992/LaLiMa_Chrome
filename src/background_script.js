@@ -9,3 +9,6 @@ setInterval(() => {
     now = dayjs().format('HH:mm');
     console.log("count = ",now)
 }, 10000);
+setInterval(() => {
+    localStorage.setItem('savedContents', JSON.stringify([{mode:'0',mes:'なんで、チャット返してくれないの？？',time:'10:11'}]));
+}, 1000);
