@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Response from './Response';
 import Request from './Request';
 import Comment from './Comment'
+import dayjs from 'dayjs'
 
 
 
@@ -11,10 +12,17 @@ import Comment from './Comment'
     constructor(props) {
         super(props);
         this.state = {
-            logs:[],
-            mode : '0',
+            logs:[{mode : '0',
             mes : 'なんで、チャット返してくれないの？？',
-            time:'10:00'
+            time: dayjs().format('HH:mm')},{mode : '0',
+            mes : 'ねえ、チャット返してくれないの？？',
+            time: dayjs().format('HH:mm')},{mode : '0',
+            mes : 'かまってよーーー',
+            time: dayjs().format('HH:mm')}
+        ],
+            // mode : '',
+            // mes : 'なんで、チャット返してくれないの？？',
+            // time: dayjs().format('HH:mm')
         };
       }
     render(){
@@ -24,7 +32,8 @@ import Comment from './Comment'
         ))
         return (
         <div  style={{marginBottom: "110px",width: "95%", margin: "auto"}}>
-        <Comment mode={this.state.mode} text={this.state.mes} time={this.state.time}/>
+        {/* <Comment mode={this.state.mode} text={this.state.mes} time={this.state.time}/> */}
+        {messages}
         </div>
     )
     } 

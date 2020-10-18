@@ -1,9 +1,9 @@
 // 投稿フォーム
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-
+import dayjs from 'dayjs'
 // import PostText from './PostText';
-//import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 // import DateTime from './DateTimePicker';
 // import SendBtn from './SendBtn';
@@ -35,15 +35,9 @@ const useStyles = makeStyles((theme) => ({
 ));
 
 export default function PostForm() {
-
     const classes = useStyles();
-
-    const FormTheme = {
-        height: "100px",
-    }
-
     return (
-        <div className={classes.root} style={FormTheme}>
+        <div className={classes.root} >
             <form id="PostForm">
                 <Grid container spacing={1}>
                     <Grid item xs={8}>
@@ -81,9 +75,10 @@ export default function PostForm() {
                             </Button>
                         </div>
                     </Grid>
-                </form>
-            </div>
-        )
-    }
+                </Grid>
+            </form>
+        </div>
+    )
 }
-export default PostForm
+
+

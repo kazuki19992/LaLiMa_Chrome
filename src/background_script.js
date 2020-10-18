@@ -3,6 +3,9 @@
 // (Chromeがバックグラウンドで動き続けていれば、ウインドウを閉じてもこのコードは動き続けるはずです！！)
 import dayjs from "dayjs"
 let count = 0;
-let now = dayjs();
-console.log(now);
-setInterval(() => console.log("count = ", count++), 1000);
+let now = dayjs().format('HH:mm');
+console.log("now=",now);
+setInterval(() => {
+    now = dayjs().format('HH:mm');
+    console.log("count = ",now)
+}, 10000);
