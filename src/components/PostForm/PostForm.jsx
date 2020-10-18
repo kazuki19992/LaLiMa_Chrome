@@ -9,33 +9,22 @@ import RemindTemplate from './RemindTemplate'
 
 
 class PostForm extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state={
-            mode : '0',
-            mes : 'なんで、チャット返してくれないの？？',
-            time:'10:00'
-        }
-
-    }
-    render() {
-        const useStyles = makeStyles((theme) => ({
-                root: {
-                    position: "fixed",
-                    bottom: "10px",
-                    left: 0,
-                    height: "100px",
-                    zIndex: 1000,
-                },
-            }
-        ));
-        const classes = useStyles();
-
-        const FormTheme = {
-            height: "100px",
-        }
+    // constructor(props) {
+    //     super(props);
+    //     this.state={
+    //         mode : '0',
+    //         mes : 'なんで、チャット返してくれないの？？',
+    //         time:'10:00'
+    //     }
+    // }
+    render(){
         return (
-            <div className={classes.root} style={FormTheme}>
+            <div style={{position:"fixed",
+            bottom: "10px",
+            left: 0,
+            height: "100px",
+            zIndex: 1000,
+            height: "100px"}}>
                 <form id="PostForm">
                     <Grid container spacing={1}>
                         <Grid item xs={8}>

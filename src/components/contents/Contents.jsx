@@ -11,7 +11,10 @@ import Comment from './Comment'
     constructor(props) {
         super(props);
         this.state = {
-            logs:[]
+            logs:[],
+            mode : '0',
+            mes : 'なんで、チャット返してくれないの？？',
+            time:'10:00'
         };
       }
     render(){
@@ -21,7 +24,7 @@ import Comment from './Comment'
         ))
         return (
         <div  style={{marginBottom: "110px",width: "95%", margin: "auto"}}>
-
+        <Comment mode={this.state.mode} text={this.state.mes} time={this.state.time}/>
         </div>
     )
     } 
