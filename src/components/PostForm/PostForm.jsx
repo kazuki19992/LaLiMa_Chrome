@@ -35,6 +35,15 @@ function submitItem(e){
     console.log(JSON.parse(localStorage.getItem('savedContents')));
 
 }
+function deleteItem(e){
+    console.log("削除");
+    let existList = JSON.parse(localStorage.getItem('savedContents'));
+    if(existList != null){
+        localStorage.removeItem('savedContents');
+    };
+    console.log(JSON.parse(localStorage.getItem('savedContents')));
+}
+
 const useStyles = makeStyles((theme) => ({
     root: {
         position: "fixed",
@@ -84,6 +93,7 @@ export default function PostForm() {
                         <div className={classes.temp}>
                             <Button
                             variant="contained"
+                            onClick={deleteItem}
                             >
                                 削除
                             </Button>
