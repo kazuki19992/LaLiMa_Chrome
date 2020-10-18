@@ -31,9 +31,9 @@ import dayjs from 'dayjs'
     render(){
         //const classes = useStyles();
         console.log(this.state.logs)
-        this.state.logs.add({mode : '0',
-            mes : 'ねえ、チャット返してくれないの？？',
-            time:'10:11'})
+        // this.state.logs.add({mode : '0',
+        //     mes : 'ねえ、チャット返してくれないの？？',
+        //     time:'10:11'})
         const messages=this.state.logs.map(e=>(
             <Comment mode={e.mode} text={e.mes} time={e.time}/>
         ))
