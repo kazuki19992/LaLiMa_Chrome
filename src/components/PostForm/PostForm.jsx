@@ -34,6 +34,26 @@ function submitItem(e){
     localStorage.setItem('savedContents', JSON.stringify(existList));
     console.log(JSON.parse(localStorage.getItem('savedContents')));
 
+    const reply = ["うん", "へー。", "あっそ", "ふーん"];
+    replyText(reply[Math.floor( Math.random()*4 )]);
+
+    
+}
+function replyText(text){
+    console.log("test",text);
+    let existList = JSON.parse(localStorage.getItem('savedContents'));
+    if(existList == null) existList = [];
+    var entryText = text;
+    var entry = {
+        "mode": '0',
+        "mes": entryText,
+        "time": dayjs().format('HH:mm')
+    };
+    localStorage.setItem("entry", JSON.stringify(entry));
+    // Save allEntries back to local storage
+    existList.push(entry);
+    localStorage.setItem('savedContents', JSON.stringify(existList));
+    console.log(JSON.parse(localStorage.getItem('savedContents')));
 }
 function deleteItem(e){
     console.log("削除");
