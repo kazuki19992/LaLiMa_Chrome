@@ -28,9 +28,24 @@ import dayjs from 'dayjs'
         };
          localStorage.setItem('savedContents', JSON.stringify([{mode:'0',mes:'なんで、チャット返してくれないの？？',time:'10:10'},{mode : '0', mes : 'ねえ、チャット返してくれないの？？', time:'10:11'}]));
       }
-    render(){
+        componentDidMount() {
+        this.TimerID= setInterval(
+            ()=>this.tick(),1000
+        );
+        }
+        componentWillUnmount() {
+            clearInterval(this.timerID);
+        }
+        tick() {
+            this.setState({
+                logs: JSON.parse(localStorage.getItem("savedContents"))
+            });
+        }
+
+
+        render(){
         //const classes = useStyles();
-        console.log(this.state.logs)
+        //console.log(this.state.logs)
         // this.state.logs.add({mode : '0',
         //     mes : 'ねえ、チャット返してくれないの？？',
         //     time:'10:11'})
