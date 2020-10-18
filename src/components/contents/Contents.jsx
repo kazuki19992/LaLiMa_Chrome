@@ -2,22 +2,27 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Response from './Response';
 import Request from './Request';
+import Comment from './Comment'
 
-const useStyles = makeStyles((theme) => ({
-    chatarea: {
-        marginBottom: "110px",
-    },
-  }
-));
 
-export default function Contents() {
-    const classes = useStyles();
 
-    return (
-        <div className={classes.chatarea} style={{width: "95%", margin: "auto"}}>
-            <Response text="ねぇなんでチャット返してくれないの？私のこと嫌いなの？"/>
-            <Request text="3分後にカップラーメンって教えて！"/>
-            <Response text="は？まだ話おわってないんだけど。最低……"/>
+
+    class Contents extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          mode : '0',
+          mes : 'なんで、チャット返してくれないの？？'
+          time:'10:00'
+        };
+      }
+    render(){
+        //const classes = useStyles();
+        return (
+        <div  style={{marginBottom: "110px",width: "95%", margin: "auto"}}>
+            <Comment mode={this.state.mode} text={this.state.mes}/>
         </div>
     )
+    } 
 }
+export default Contents
