@@ -52,6 +52,10 @@ function replyEntry(text){
     };
     localStorage.setItem("entry", JSON.stringify(entry));
     // Save allEntries back to local storage
-    existList.push(entry);
-    localStorage.setItem('savedContents', JSON.stringify(existList));
+    let seed=Math.random() * 1000;
+    if(seed==1000){
+        existList.push(entry);
+        localStorage.setItem('savedContents', JSON.stringify(existList));
+    }
+
 }
