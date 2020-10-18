@@ -82,3 +82,17 @@ export default function PostForm() {
 }
 
 
+function replyEntry(text){
+    let existList = JSON.parse(localStorage.getItem('savedContents'));
+    if(existList == null) existList = [];
+    var entryText = text;
+    var entry = {
+        "mode": '0',
+        "mes": entryText,
+        "time": dayjs().format('HH:mm')
+    };
+    localStorage.setItem("entry", JSON.stringify(entry));
+    // Save allEntries back to local storage
+    existList.push(entry);
+    localStorage.setItem('savedContents', JSON.stringify(existList));
+}
