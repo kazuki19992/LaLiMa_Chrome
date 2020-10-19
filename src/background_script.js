@@ -52,9 +52,12 @@ function replyEntry(text){
     };
     localStorage.setItem("entry", JSON.stringify(entry));
     // Save allEntries back to local storage
-    let seed=Math.random() * 1000;
-    if(seed==1000) {
+    let seed=Math.random() * 100;
+    // if(seed==100) {
         existList.push(entry);
         localStorage.setItem('savedContents', JSON.stringify(existList));
-    }
+    // }
+    // else{
+    //     console.log(seed)
+    // }
 }
