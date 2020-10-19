@@ -10,6 +10,8 @@ import { makeStyles } from '@material-ui/core/styles';
 // import RemindTemplate from './RemindTemplate'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+
 let message;
 function updateItem(e){
     let nowTime=dayjs().format('HH:mm');
@@ -68,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         position: "fixed",
         backgroundColor: "#ffffff",
-        bottom: "10px",
+        bottom: "30px",
         left: 0,
         height: "100px",
         zIndex: 1000,
@@ -91,6 +93,7 @@ export default function PostForm() {
     const classes = useStyles();
     return (
         <div className={classes.root} >
+            <AnchorLink href="#bottom-of-list" offset="50">最下部へ移動</AnchorLink>
             <form id="PostForm">
                 <Grid container spacing={1}>
                     <Grid item xs={8}>

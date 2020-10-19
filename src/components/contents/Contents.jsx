@@ -7,7 +7,6 @@ import dayjs from 'dayjs'
 
 
 
-
     class Contents extends React.Component {
     constructor(props) {
         super(props);
@@ -26,8 +25,10 @@ import dayjs from 'dayjs'
             // mes : 'なんで、チャット返してくれないの？？',
             // time: dayjs().format('HH:mm')
         };
-         localStorage.setItem('savedContents', JSON.stringify([{mode:'0',mes:'なんで、チャット返してくれないの？？',time:'10:10'},{mode : '0', mes : 'ねえ、チャット返してくれないの？？', time:'10:11'}]));
+
+         // localStorage.setItem('savedContents', JSON.stringify([{mode:'0',mes:'なんで、チャット返してくれないの？？',time:'10:10'},{mode : '0', mes : 'ねえ、チャット返してくれないの？？', time:'10:11'}]));
       }
+
         componentDidMount() {
         this.TimerID= setInterval(
             ()=>this.tick(),1000
@@ -40,10 +41,19 @@ import dayjs from 'dayjs'
             this.setState({
                 logs: JSON.parse(localStorage.getItem("savedContents"))
             });
+            const scrollArea = document.getElementById("scroll-area")
+            if (scrollArea) {
+                console.log(scrollArea.scrollTop);
+                console.log(scrollArea.scrollHeight);
+                scrollArea.scrollTop = scrollArea.scrollHeight;
+            }
+
         }
 
 
+
         render(){
+
         //const classes = useStyles();
         //console.log(this.state.logs)
         // this.state.logs.add({mode : '0',
@@ -53,7 +63,7 @@ import dayjs from 'dayjs'
             <Comment mode={e.mode} text={e.mes} time={e.time}/>
         ))
         return (
-        <div  style={{marginBottom: "110px",width: "95%", margin: "auto"}}>
+        <div id="scroll-area" style={{marginBottom: "110px",width: "95%", margin: "auto",overflowY: "scroll",height:"60%"}}>
         {/* <Comment mode={this.state.mode} text={this.state.mes} time={this.state.time}/> */}
         {messages}
         </div>

@@ -2,6 +2,7 @@
 // リマインド通知を行う処理とか、リマインド登録を行う処理はここに書くべきだと思う……
 // (Chromeがバックグラウンドで動き続けていれば、ウインドウを閉じてもこのコードは動き続けるはずです！！)
 import dayjs from "dayjs"
+
 let count = 0;
 let now = dayjs().format('HH:mm');
 console.log("now=",now);
@@ -27,12 +28,13 @@ const msgList = [
     "ふーん…",
     "こんなにすきなのに……",
     "あいたい。",
-    "ねぇ、会いたいよー……"
+    "ねぇ、会いたいよー……",
+    "通話しよ。。。",
 ]
 
 setInterval(() => {
     now = dayjs().format('HH:mm');
-    console.log("count = ",now)
+    //console.log("count = ",now)
     replyEntry(msgList[Math.floor( Math.random()* msgList.length )]);
     console.log(JSON.parse(localStorage.getItem('savedContents')));
 }, 10000);
@@ -53,8 +55,7 @@ function replyEntry(text){
     localStorage.setItem("entry", JSON.stringify(entry));
     // Save allEntries back to local storage
     let seed=Math.random() * 1000;
-    if(seed==1000) {
         existList.push(entry);
         localStorage.setItem('savedContents', JSON.stringify(existList));
-    }
+
 }
