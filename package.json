@@ -11,10 +11,12 @@
     "customize-cra": "^1.0.0",
     "dayjs": "^1.9.3",
     "react": "^16.14.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-app-rewired": "^2.1.6",
     "react-dom": "^16.14.0",
     "react-scripts": "3.4.3",
-    "react-swipeable-views": "^0.13.9"
+    "react-swipeable-views": "^0.13.9",
+    "react-web-notification": "^0.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
