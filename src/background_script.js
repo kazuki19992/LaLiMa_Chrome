@@ -54,8 +54,19 @@ function replyEntry(text){
     };
     localStorage.setItem("entry", JSON.stringify(entry));
     // Save allEntries back to local storage
+<<<<<<< HEAD
+    let seed=Math.random() * 100;
+    // if(seed==100) {
+        existList.push(entry);
+        localStorage.setItem('savedContents', JSON.stringify(existList));
+    // }
+    // else{
+    //     console.log(seed)
+    // }
+=======
     let seed=Math.random() * 1000;
         existList.push(entry);
         localStorage.setItem('savedContents', JSON.stringify(existList));
 
+>>>>>>> 4a2f7b66229de1800b1ac50fdc0b895e437d8794
 }
