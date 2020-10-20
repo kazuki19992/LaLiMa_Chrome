@@ -93,7 +93,6 @@ export default function PostForm() {
     const classes = useStyles();
     return (
         <div className={classes.root} >
-            <AnchorLink href="#bottom-of-list" offset="50">最下部へ移動</AnchorLink>
             <form id="PostForm">
                 <Grid container spacing={1}>
                     <Grid item xs={8}>
