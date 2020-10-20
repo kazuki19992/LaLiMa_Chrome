@@ -3,7 +3,7 @@
 // (Chromeがバックグラウンドで動き続けていれば、ウインドウを閉じてもこのコードは動き続けるはずです！！)
 import dayjs from "dayjs"
 
-let count = 0;
+
 let now = dayjs().format('HH:mm');
 console.log("now=",now);
 
@@ -46,27 +46,14 @@ setInterval(() => {
 function replyEntry(text){
     let existList = JSON.parse(localStorage.getItem('savedContents'));
     if(existList == null) existList = [];
-    var entryText = text;
-    var entry = {
+    let entry = {
         "mode": '0',
-        "mes": entryText,
+        "mes": text,
         "time": dayjs().format('HH:mm')
     };
     localStorage.setItem("entry", JSON.stringify(entry));
     // Save allEntries back to local storage
-<<<<<<< HEAD
-    let seed=Math.random() * 100;
-    // if(seed==100) {
-        existList.push(entry);
-        localStorage.setItem('savedContents', JSON.stringify(existList));
-    // }
-    // else{
-    //     console.log(seed)
-    // }
-=======
-    let seed=Math.random() * 1000;
         existList.push(entry);
         localStorage.setItem('savedContents', JSON.stringify(existList));
 
->>>>>>> 4a2f7b66229de1800b1ac50fdc0b895e437d8794
 }
